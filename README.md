@@ -62,3 +62,9 @@ omp_lock locks[N] {};
    // ...
 }
 ```
+
+# TODO
+
+1. Contemplate renaming type to omp_raii_lock
+
+2. Add similar RAII wrappers for OpenMP's nested locks.
