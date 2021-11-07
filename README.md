@@ -15,7 +15,7 @@ for ( int i=0; i<N; ++i ) {
 #pragma omp parallel
 {
    // ...
-   omp_set_lock( &locks[x] );
+   omp_set_lock( &locks[x] ); // blocking wait
    // ...
    omp_unset_lock( &locks[x] );
 }
@@ -46,7 +46,7 @@ omp_lock locks[N] {};
 #pragma omp parallel
 {
    // ...
-   auto pass = locks[x].wait_for_pass();
+   auto pass = locks[x].wait_for_pass(); // blocking wait
    // ...
 }
 
@@ -62,6 +62,8 @@ omp_lock locks[N] {};
    // ...
 }
 ```
+
+Since the lifetimes of the classes added by this header are scoped, it can sometimes be wise to wrap the passes inside a `{...}` block with just the logic that relies on the lock, which might reduce the lock occupancy time.
 
 # TODO
 
