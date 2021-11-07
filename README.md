@@ -70,3 +70,5 @@ Since the lifetimes of the classes added by this header are scoped, it can somet
 1. Contemplate renaming type to omp_raii_lock
 
 2. Add similar RAII wrappers for OpenMP's nested locks.
+
+3. Rename `wait_for_pass` to `await_pass`?
