@@ -8,7 +8,7 @@ Code like:
 ```cpp
 omp_lock_t locks[N] {};
 
-for ( int i=0; i<N; ++i) {
+for ( int i=0; i<N; ++i ) {
    omp_init_lock( &locks[i] );
 }
 
@@ -33,7 +33,7 @@ for ( int i=0; i<N; ++i) {
    // ...
 }
 
-for ( int i=0; i<N; ++i) {
+for ( int i=0; i<N; ++i ) {
    omp_destroy_lock( &locks[i] );
 }
 ```
