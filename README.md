@@ -41,7 +41,7 @@ for ( int i=0; i<N; ++i ) {
 becomes:
 
 ```cpp
-omp_raii_lock locks[N] {};
+omp_raii_lock_t locks[N] {};
 
 #pragma omp parallel
 {
